@@ -1,0 +1,144 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  /* width: 50%; */
+}
+.social {
+  min-width: 54px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  /* background-color: blue; */
+  border-radius: 0.8rem;
+  border: 1px solid var(--primary-color);
+}
+.icon {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.social .icon {
+  color: var(--text-primary);
+}
+.presentation {
+  /* background-color: green; */
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.presentation h1 {
+  margin-bottom: 1rem;
+}
+/* .presentation h1 span {
+  background: linear-gradient(
+    to right,
+    var(--text-primary),
+    var(--primary-color),
+    var(--text-primary)
+  );
+  background-clip: text;
+  color: transparent;
+} */
+.presentation p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+.btns button {
+  padding: 0.8rem 1.5rem;
+}
+.btns .hireBtn {
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: black;
+}
+.btns .resumeBtn {
+  border-radius: 1rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right .boxImg {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid var(--primary-color);
+}
+.right .boxImg img {
+  width: 100%;
+  height: 100%;
+}
+/* media queries */
+@media (max-width: 1065px) {
+  .home {
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 2rem;
+  }
+  .right {
+    order: -1;
+    width: 100%;
+    /* centrer le contenu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left {
+    width: 100%;
+  }
+  .presentation h1 {
+    text-align: center;
+    /* translation: 54px taile de div social + 25px le gap ca fait presque 80px */
+    transform: translateX(-40px);
+  }
+  .btns {
+    justify-content: center;
+  }
+}
+@media (max-width: 561px) {
+  .btns {
+    width: 100%;
+    flex-direction: column;
+    transform: translateX(-40px);
+  }
+  .btns .resumeBtn {
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 299px) {
+  .resumeBtn .icon {
+    display: none;
+  }
+}
+@media (max-width: 270px) {
+  .btns .resumeBtn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}

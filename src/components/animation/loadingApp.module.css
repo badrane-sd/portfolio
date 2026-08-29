@@ -1,0 +1,205 @@
+:root {
+  /*  Animation de l'élét intro*/
+  --durationAnimIntro: 2s;
+  --delayAnimIntro: 6000ms;
+  /* Animation des éléts first, last et middle */
+  --durationAnim: 2s;
+  --delayFirstAnim: 1000ms;
+  --delaylastAnim: 5000ms;
+  /* Animation de l'élét middle::after */
+  --durationMiddleAfter: 3s;
+  --delayMiddleAfter: 2000ms;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  /* height: 100dvh; */
+  scrollbar-width: 0;
+  background-color: var(--bg, #fcf6fe);
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: bgTransparent var(--durationAnimIntro) ease-in-out
+    var(--delayAnimIntro);
+}
+
+@keyframes bgTransparent {
+  from {
+    background-color: var(--bg);
+  }
+  to {
+    background-color: transparent;
+    /* display: none; */
+  }
+}
+
+.intro .first,
+.intro .last {
+  width: 50%;
+  color: black;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+}
+.intro .first span,
+.intro .last span {
+  color: var(--text-primary);
+  animation: translY 0.3s linear;
+  z-index: -1;
+}
+@keyframes translY {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+    display: none;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+  }
+  /* 0% {
+    transform: translateY(4rem);
+    opacity: 0;
+    display: none;
+  }
+  50% {
+    transform: translateY(2rem);
+    opacity: 0.5;
+    display: block;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+  } */
+}
+.intro .first {
+  direction: rtl;
+  animation:
+    toLeft var(--durationAnim) ease-in-out var(--delayFirstAnim) forwards,
+    toMaxLeft var(--durationAnim) ease-in-out var(--delaylastAnim) forwards;
+}
+.intro .last {
+  animation:
+    toRight var(--durationAnim) ease-in-out var(--delayFirstAnim) forwards,
+    toMaxRight var(--durationAnim) ease-in-out var(--delaylastAnim) forwards;
+}
+@keyframes toLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-125px);
+    margin-right: 1rem;
+  }
+}
+@keyframes toMaxLeft {
+  from {
+    transform: translateX(-125px);
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes toRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(125px);
+    margin-left: 1rem;
+  }
+}
+@keyframes toMaxRight {
+  from {
+    transform: translateX(125px);
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+.intro .middle {
+  background-color: var(--primary-color);
+  color: red;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation:
+    start var(--durationAnim) ease-in-out var(--delayFirstAnim) forwards,
+    fullScreen var(--durationAnim) ease-in-out var(--delaylastAnim) forwards;
+  z-index: 102;
+}
+
+@keyframes start {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 250px;
+    height: 120px;
+  }
+}
+@keyframes fullScreen {
+  from {
+    width: 250px;
+    height: 120px;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+  }
+}
+
+.intro .middle::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  animation: changeContent var(--durationMiddleAfter) ease-in-out
+    var(--delayMiddleAfter);
+}
+@keyframes changeContent {
+  0% {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content: "";
+  }
+  30% {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content: "Design .";
+  }
+  60% {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content: "Deploy .";
+  }
+  99% {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content: "Maintain .";
+  }
+  100% {
+    content: "";
+    background-color: transparent;
+  }
+}

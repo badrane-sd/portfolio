@@ -1,0 +1,37 @@
+/* ============================================================
+   THÈME CLAIR (défaut)
+   ============================================================ */
+:root {
+  --bg: #fcf6fe;
+  --surface: #ffffff;
+  --surface-alt: #f3e8fd;
+  --border: #e5d5f5;
+  --primary-color: #c9f31d;
+
+  --text-primary: #1a0a2e;
+  --text-secondary: #464547;
+  --text-muted: #9b7bb5;
+
+  --accent: #eaedf0;
+  /* --accent-soft: #c8c3d6; */
+  /* --accent-hover: #9f67f5; */
+}
+
+/* ============================================================
+   THÈME SOMBRE
+   ============================================================ */
+html.dark {
+  --bg: #020617;
+  --surface: #0f172a; /* 0f172a */
+  --surface-alt: #1e1035;
+  --border: #2d1f4e;
+  --primary-color: #c9f31d;
+
+  --text-primary: #f1e9ff;
+  --text-secondary: #c4b0e0;
+  --text-muted: #7c6a99;
+
+  --accent: #7e8185; /* a78bfa eaedf0 */
+  /* --accent-hover: #c4b5fd;
+  --accent-soft: #1e1035; */
+}

@@ -1,0 +1,144 @@
+.contact {
+  padding: 10px 15%;
+}
+.sectionTitle {
+  text-align: center;
+}
+form {
+  margin-top: 3rem;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  position: relative;
+}
+.lineFields {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.lineFields .field {
+  flex-grow: 1;
+  position: relative;
+}
+.field {
+  position: relative;
+}
+.field input {
+  width: 100%;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+.field input:focus ~ label,
+.field input:valid ~ label {
+  top: -15px;
+  padding: 0 0.8rem;
+  border-radius: 1rem;
+  color: var(--text-secondary);
+}
+textarea {
+  width: 100%;
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  outline: none;
+  resize: vertical;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+.field .labelTextarea {
+  position: absolute;
+  top: 10%;
+  left: 1rem;
+}
+.field textarea:focus ~ .labelTextarea,
+.field textarea:valid ~ .labelTextarea {
+  top: -10%;
+  color: var(--text-primary);
+  padding: 0 0.8rem;
+  border-radius: 1rem;
+}
+.field span {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 1rem;
+}
+.submit {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  position: relative;
+  margin-top: 1rem;
+  color: var(--text-primary);
+  font-family: 1.5rem;
+}
+.submit:focus {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+/* Start Notif */
+.notif {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: 0;
+  color: black; /* var(--bg); */
+  animation:
+    notifShow 1s ease-in forwards,
+    notifDelete 3s ease-in 2s forwards;
+}
+.notif.success {
+  background-color: var(--primary-color);
+}
+.notif.failed {
+  background-color: rgb(213, 42, 42);
+}
+@keyframes notifShow {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes notifDelete {
+  from {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+  to {
+    /* transform: translateY(-30px); */
+    /* opacity: 0; */
+    display: none;
+  }
+}
+/* End Notif */
