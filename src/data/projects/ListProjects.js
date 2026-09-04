@@ -17,7 +17,7 @@ export const LISTPROJECTS = [
   {
     id: 2,
     title: "Dashboard",
-    description: "Dashbord Tailwind",
+    description: "Dashbord CSS",
     technologies: ["css"],
     complete: false,
     addresses: {
