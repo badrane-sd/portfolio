@@ -21,8 +21,8 @@ export const LISTPROJECTS = [
     technologies: ["css"],
     complete: false,
     addresses: {
-      code: "https://www.github.code",
-      demo: "https://www.github.demo",
+      code: "https://github.com/badrane-sd/daschboard-css",
+      demo: "https://badrane-sd.github.io/daschboard-css/",
     },
     image: dashboard,
   },
