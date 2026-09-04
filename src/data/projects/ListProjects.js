@@ -8,7 +8,10 @@ export const LISTPROJECTS = [
     description: "Application Ecommerce",
     technologies: ["React", "Zustand", "CSS"],
     complete: true,
-    addresses: { code: "www.github.code", demo: "www.github.demo" },
+    addresses: {
+      code: "https://github.com/badrane-sd/ecommerce",
+      demo: "https://ecommerce-coral-nine-75.vercel.app/",
+    },
     image: ecommerce,
   },
   {
