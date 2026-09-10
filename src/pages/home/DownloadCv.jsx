@@ -1,4 +1,4 @@
-import cv from "../../assets/docs/cv.pdf";
+import cv from "../../assets/docs/cv--.pdf";
 const DownloadCv = () => {
   return (
     <a href={cv} download="CV-Badrane">
